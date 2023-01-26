@@ -1,17 +1,70 @@
 public class Journal{
     public List <Entry> _entries = new List<Entry>();
 
-    public void AddingAnEntry(string _prompt, string _answer) {
+    public void AddingAnEntry(string prompt, string answer) {
         Entry entry = new Entry();
 
-        //DateTime today = DateTime.Today;
-        //entry._date = today.Day.ToString() + "/" + today.Month.ToString() + "/" + today.Year.ToString();
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString();
-        
-        entry._prompt = _prompt;
+        DateTime today = DateTime.Now;
+        string dateText = today.ToShortDateString();
 
-        entry._answer = _answer;      
+        entry._date = dateText;
+        entry._prompt = prompt;
+        entry._answer = answer;   
+
+        _entries.Add(entry);
+
+    }
+
+    public void DisplayAllTheEntries()
+    
+    public void SavingToAFile(string fileName) {
+
+        using (StreamWriter outputFile = File.AppendText(fileName))
+        {
+            foreach(Entry entry in _entries) 
+            {   
+                string date = entry._date;
+                string prompt = entry._prompt;
+                string answer = entry._answer;
+
+                outputFile.WriteLine($"Date: {date} - Prompt:{prompt} \n{answer}");               
+            }
+            
+
+        }
+    }
+
+    public void LoadingFromAFile(string fileName) {
+
+        string[] lines = System.IO.File.ReadAllLines(fileName);
+
+        int i = 1;
+        string date = "";
+        string prompt = "";
+
+        foreach (string line in lines)
+        {   
+            if (i%2 != 0)
+            {
+            string[] parts = line.Split("-");
+
+            date = parts[0];
+            prompt = parts[1];
+            }
+            else {
+                Entry entry = new Entry();
+
+                entry._date = date;
+                entry._prompt = prompt;
+                entry._answer = line;
+
+                _entries.Add(entry);
+            }
+            
+        }
+
+        
+        
     }
 
     

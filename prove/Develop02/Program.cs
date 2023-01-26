@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Program
 {
@@ -14,8 +15,10 @@ class Program
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
             Console.WriteLine("5. Quit");
-            Console.Write("What would you like to do? ");
-            option = int.Parse(Console.ReadLine());
+            Console.WriteLine("What would you like to do? ");
+
+            string option_sring = Console.ReadLine();
+            option = int.Parse(option_sring);
 
             if (option == 1)
             {
@@ -23,6 +26,21 @@ class Program
                 prompt.DisplayPrompt();
                 Console.Write("> ");
                 string answer = Console.ReadLine();
+            }
+
+            else if (option == 2)
+            {
+
+            }
+
+            else if (option == 3)
+            {
+                
+            }
+
+            else if (option == 4)
+            {
+                
             }
         }
     }
