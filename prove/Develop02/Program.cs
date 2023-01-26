@@ -16,6 +16,14 @@ class Program
             Console.WriteLine("5. Quit");
             Console.Write("What would you like to do? ");
             option = int.Parse(Console.ReadLine());
+
+            if (option == 1)
+            {
+                PromptGenerator prompt = new PromptGenerator();
+                prompt.DisplayPrompt();
+                Console.Write("> ");
+                string answer = Console.ReadLine();
+            }
         }
     }
 }

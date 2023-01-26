@@ -4,8 +4,10 @@ public class Journal{
     public void AddingAnEntry(string _prompt, string _answer) {
         Entry entry = new Entry();
 
-        DateTime today = DateTime.Today;
-        entry._date = today.Day.ToString() + "/" + today.Month.ToString() + "/" + today.Year.ToString();
+        //DateTime today = DateTime.Today;
+        //entry._date = today.Day.ToString() + "/" + today.Month.ToString() + "/" + today.Year.ToString();
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
         
         entry._prompt = _prompt;
 
