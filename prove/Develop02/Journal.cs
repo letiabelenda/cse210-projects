@@ -15,8 +15,17 @@ public class Journal{
 
     }
 
-    public void DisplayAllTheEntries()
-    
+    public void DisplayAllTheEntries() {
+        foreach(Entry entry in _entries)
+        {   
+            string date = entry._date;
+            string prompt = entry._prompt;
+            string answer =  entry._answer;
+
+            Console.WriteLine($" \n Date: {date} - Prompt: {prompt} \n {answer}");
+        }
+    }
+
     public void SavingToAFile(string fileName) {
 
         using (StreamWriter outputFile = File.AppendText(fileName))
@@ -27,7 +36,7 @@ public class Journal{
                 string prompt = entry._prompt;
                 string answer = entry._answer;
 
-                outputFile.WriteLine($"Date: {date} - Prompt:{prompt} \n{answer}");               
+                outputFile.WriteLine($"Date: {date} - Prompt:{prompt} \n {answer}");            
             }
             
 
