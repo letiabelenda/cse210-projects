@@ -45,6 +45,7 @@ class Program
 
             else if (option == 3)
             {
+                Console.ForegroundColor = ConsoleColor.DarkGray;
                 Console.WriteLine("What is the file name?");
                 string fileName = Console.ReadLine();
 
@@ -54,6 +55,7 @@ class Program
 
             else if (option == 4)
             {
+                Console.ForegroundColor = ConsoleColor.DarkGray;
                 Console.WriteLine("What is the file name?");
                 string fileName = Console.ReadLine();
 
