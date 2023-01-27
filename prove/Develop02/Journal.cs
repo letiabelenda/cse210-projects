@@ -28,7 +28,7 @@ public class Journal{
 
     public void SavingToAFile(string fileName) {
 
-        using (StreamWriter outputFile = File.AppendText(fileName))
+        using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             foreach(Entry entry in _entries) 
             {   
