@@ -7,6 +7,7 @@ class Program
     {
         Console.WriteLine("Welcome to the Journal Program!");
 
+        Journal journal = new Journal();
         int option = 0;
         while (option != 5) {
             Console.WriteLine("Please select one of the following choices:");
@@ -26,21 +27,29 @@ class Program
                 prompt.DisplayPrompt();
                 Console.Write("> ");
                 string answer = Console.ReadLine();
+                journal.AddingAnEntry(prompt.GetPrompt(), answer);
             }
 
             else if (option == 2)
             {
-
+                journal.DisplayAllTheEntries();
             }
 
             else if (option == 3)
             {
-                
+                Console.WriteLine("What is the file name?");
+                string fileName = Console.ReadLine();
+
+                journal = new Journal();
+                journal.LoadingFromAFile(fileName);
             }
 
             else if (option == 4)
             {
-                
+                Console.WriteLine("What is the file name?");
+                string fileName = Console.ReadLine();
+
+                journal.SavingToAFile(fileName);
             }
         }
     }
