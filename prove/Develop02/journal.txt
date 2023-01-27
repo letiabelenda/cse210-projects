@@ -1,0 +1,8 @@
+Date: 26-Jan-23 - Prompt:How was the weather today? 
+ Sunny
+Date: 26-Jan-23 - Prompt:How was the weather today? 
+ Windy
+Date: 26-Jan-23 - Prompt:How was the weather today? 
+ 2
+Date: 26-Jan-23 - Prompt:Is there anything I did today that I regret? 
+ I don't know

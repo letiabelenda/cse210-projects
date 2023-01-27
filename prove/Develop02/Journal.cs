@@ -36,7 +36,7 @@ public class Journal{
                 string prompt = entry._prompt;
                 string answer = entry._answer;
 
-                outputFile.WriteLine($"Date: {date} - Prompt:{prompt} \n {answer}");            
+                outputFile.WriteLine($"{date} - {prompt} \n {answer}");            
             }
             
 
@@ -55,7 +55,7 @@ public class Journal{
         {   
             if (i%2 != 0)
             {
-            string[] parts = line.Split("-");
+            string[] parts = line.Split(" - ");
 
             date = parts[0];
             prompt = parts[1];
@@ -69,6 +69,7 @@ public class Journal{
 
                 _entries.Add(entry);
             }
+            i = i + 1;
             
         }
 
