@@ -1,4 +1,5 @@
 public class Scripture
 {
-    private string _text;
+    private Reference _reference;
+    private List<Word> _text;
 }
