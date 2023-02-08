@@ -4,7 +4,6 @@ public class Scripture
     private List<Word> _text = new List<Word>();
 
     public Scripture(string text){
-        //Word text = new Word();
         text = "Me gustan los michis";
          
         char [] separator = {' '};

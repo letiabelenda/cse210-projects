@@ -2,11 +2,6 @@ public class Word{
     private string _word;
     private Boolean _hidden;
 
-    public Word(){
-        _word = "";
-        _hidden = false;
-    }
-
     public Word(string word){
         _word = word;
         _hidden = false;
