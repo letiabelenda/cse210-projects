@@ -3,16 +3,28 @@ public class Scripture
     private Reference _reference;
     private List<Word> _text = new List<Word>();
 
-    public Scripture(string text){
-        text = "Me gustan los michis";
+    public Scripture(string book, string chapter, string firstVerse, string secondVerse, string rawText){
          
         char [] separator = {' '};
-        string[] strlist = text.Split(separator);
+        string[] strlist = rawText.Split(separator);
 
-        foreach(string s in strlist)
+        foreach(string str in strlist)
         {
-            Console.WriteLine(s);
+            Word word = new Word(str);
+            _text.Add(word);
         }
-        Console.ReadKey();
+        
+        if (secondVerse == "")
+        {
+            Reference reference = new Reference(book, chapter, firstVerse);  
+        } 
+        else
+        {
+            Reference reference = new Reference(book, chapter, firstVerse, secondVerse);
+        }            
+    }
+
+    public void HideWord(){
+        
     }
 }
