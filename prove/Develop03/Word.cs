@@ -11,6 +11,10 @@ public class Word{
         _hidden = true;
     }
 
+    public Boolean IsHidden(){
+        return _hidden;
+    }
+
     public string GetRenderedWord(){
         if (_hidden){
             return "___";

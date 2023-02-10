@@ -16,13 +16,12 @@ public class Scripture
             _text.Add(word);
         }
         
-        _length = _text.Count;
+        _length = _text.Count();
         _countHiddenWords = 0;
 
         if (secondVerse == "")
         {
             _reference = new Reference(book, chapter, firstVerse); 
-             
         } 
         else
         {
@@ -31,26 +30,18 @@ public class Scripture
     }
 
     public void HideWords(){
-        List<int> numbers = new List<int>();
         Random random = new Random();
         int i = 0;
 
         while (i < 3 && !IsCompletelyHidden())
         {
             int index = random.Next(_length);
+            Word word = _text[index];
 
-            if (!numbers.Contains(index)){
-                //debug
-                //Console.WriteLine(index);
-                //Console.WriteLine(_text[index].GetRenderedWord());
-
+            if (!word.IsHidden()){
                 _text[index].Hide();
-                numbers.Add(index);
                 i = i + 1;
                 _countHiddenWords = _countHiddenWords + 1;
-
-                //debugs
-                //Console.WriteLine(_text[index].GetRenderedWord());
             }
         }
     }
