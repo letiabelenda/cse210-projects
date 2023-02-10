@@ -19,29 +19,32 @@ public class Scripture
 
         if (secondVerse == "")
         {
-            Reference reference = new Reference(book, chapter, firstVerse);  
+            _reference = new Reference(book, chapter, firstVerse); 
+             
         } 
         else
         {
-            Reference reference = new Reference(book, chapter, firstVerse, secondVerse);
+            _reference = new Reference(book, chapter, firstVerse, secondVerse);
         }            
     }
 
     public void HideWords(){
         int[] numbers = {};
         Random random = new Random();
-        i = 0;
+        int i = 0;
 
         while (i < 3)
         {
             int index = random.Next(_length);
             if (numbers.Contains(index)){
                 _text[index].Hide();
-                numbers.Add(index);
+                numbers.Append(index);
                 i = i + 1;
             }
         }
     }
 
-    
+    public List<Word> GetRenderedText(){
+        return _text;
+    }  
 }
