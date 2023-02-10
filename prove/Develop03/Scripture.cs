@@ -41,8 +41,8 @@ public class Scripture
 
             if (!numbers.Contains(index)){
                 //debug
-                Console.WriteLine(index);
-                Console.WriteLine(_text[index].GetRenderedWord());
+                //Console.WriteLine(index);
+                //Console.WriteLine(_text[index].GetRenderedWord());
 
                 _text[index].Hide();
                 numbers.Add(index);
@@ -50,7 +50,7 @@ public class Scripture
                 _countHiddenWords = _countHiddenWords + 1;
 
                 //debugs
-                Console.WriteLine(_text[index].GetRenderedWord());
+                //Console.WriteLine(_text[index].GetRenderedWord());
             }
         }
     }
