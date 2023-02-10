@@ -31,18 +31,26 @@ public class Scripture
     }
 
     public void HideWords(){
-        int[] numbers = {};
+        List<int> numbers = new List<int>();
         Random random = new Random();
         int i = 0;
 
         while (i < 3 && !IsCompletelyHidden())
         {
             int index = random.Next(_length);
-            if (numbers.Contains(index)){
+
+            if (!numbers.Contains(index)){
+                //debug
+                Console.WriteLine(index);
+                Console.WriteLine(_text[index].GetRenderedWord());
+
                 _text[index].Hide();
-                numbers.Append(index);
+                numbers.Add(index);
                 i = i + 1;
                 _countHiddenWords = _countHiddenWords + 1;
+
+                //debugs
+                Console.WriteLine(_text[index].GetRenderedWord());
             }
         }
     }
@@ -50,9 +58,9 @@ public class Scripture
     public void PrintScripture(){
         _reference.PrintReference();
 
-        foreach (word in _text)
+        foreach (Word word in _text)
         {
-            Console.Write(_word.GetRenderedWord() + " ");
+            Console.Write(word.GetRenderedWord() + " ");
         }
     }
 
