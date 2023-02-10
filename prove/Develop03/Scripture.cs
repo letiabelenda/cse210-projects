@@ -31,15 +31,17 @@ public class Scripture
         int[] numbers = {};
         Random random = new Random();
         i = 0;
-        
+
         while (i < 3)
         {
             int index = random.Next(_length);
             if (numbers.Contains(index)){
                 _text[index].Hide();
                 numbers.Add(index);
+                i = i + 1;
             }
         }
-
     }
+
+    
 }
