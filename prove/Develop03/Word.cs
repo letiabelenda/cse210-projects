@@ -10,10 +10,17 @@ public class Word{
     public void Hide(){
         _hidden = true;
     }
-    public Boolean IsHidden(){
-        return _hidden;
-    }
-    //public void GetRenderedWord(){
-
+    //public Boolean IsHidden(){
+        //return _hidden;
     //}
+
+    public string GetRenderedWord(){
+        if (_hidden){
+            return "___";
+        }
+        else
+        {
+            return _word;
+        }
+    }   
 }
