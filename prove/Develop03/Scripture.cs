@@ -47,6 +47,15 @@ public class Scripture
         }
     }
 
+    public void PrintScripture(){
+        _reference.PrintReference();
+
+        foreach (word in _text)
+        {
+            Console.Write(_word.GetRenderedWord() + " ");
+        }
+    }
+
     public List<Word> GetRenderedText(){
         return _text;
     }

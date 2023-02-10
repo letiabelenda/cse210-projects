@@ -8,6 +8,7 @@ public class Reference{
         _book = book;
         _chapter = chapter;
         _firstVerse = firstVerse;
+        _secondVerse = "";
     }
     public Reference(string book, string chapter, string firstVerse, string secondVerse) {
         _book = book;
@@ -27,5 +28,14 @@ public class Reference{
     }
      public string GetSecondVerse(){
         return _secondVerse;
+    }
+    public void PrintReference(){
+        if (_secondVerse == ""){
+            Console.Write(_book + " " + _chapter + ":" + _firstVerse + " ");
+        }
+        else
+        {
+            Console.Write(_book + " " + _chapter + ":" + _firstVerse + "-" + _secondVerse + " ");
+        }        
     }
 }
