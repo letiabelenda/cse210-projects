@@ -5,11 +5,11 @@ class Program
     static void Main(string[] args)
     {   
         //Crear lista de Scriptures, y de forma randomica elegir una de ellas
-        Scripture scripture = new Scripture("1 Nephi", "2", "4", "5", "Me gustan los michis");
+        Scripture scripture1 = new Scripture("DyC", "121", "7", "", "My son, apeace be unto thy soul; thine badversity and thine afflictions shall be but a csmall moment;");
         
-        while (!scripture.IsCompletelyHidden()) //|| "no quit")
+        while (!scripture1.IsCompletelyHidden()) //|| "no quit")
         {
-            scripture.PrintScripture();
+            scripture1.PrintScripture();
             Console.WriteLine();
             Console.WriteLine("Press enter to continue or type 'quit' to finish:");
 
@@ -17,7 +17,7 @@ class Program
             
             Console.Clear();
 
-            scripture.HideWords();
+            scripture1.HideWords();
 
         }
     }
