@@ -1,7 +1,7 @@
 public class Activity {
-    private string _activityName;
-    private string _description;
-    private int _duration;
+    protected string _activityName;
+    protected string _description;
+    protected int _duration;
 
     public Activity(string activityName, string description, int duration) {
         _activityName = activityName;
