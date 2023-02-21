@@ -21,4 +21,57 @@ public class Reflecting : Activity
         Console.WriteLine();
         Console.WriteLine("When you have something in mind, press enter to continue.");
     }
+
+    public void Message()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Now ponder on each of the following questions as they related to this experience.");
+        Console.Write("You may begin in: ");
+        Console.Write("5");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.Write("4");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.Write("3");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.Write("2");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.Write("1");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.WriteLine();
+
+        Console.Clear();
+    }
+
+    public void GetRandomQuestion()
+    {
+        Random random = new Random();
+        int index = random.Next(_questions.Count());
+
+        string question = _questions[index];
+        Console.Write(question);
+
+        var startTime = DateTime.UtcNow;
+
+        while(DateTime.UtcNow - startTime < TimeSpan.FromSeconds(10))
+        {
+             Console.Write("\\");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            Console.Write("|");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            Console.Write("/");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            Console.Write("-");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+        }
+        Console.WriteLine();
+    }
 }
