@@ -4,7 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Activity prove = new Activity("Prueba", "Me pica la cola", 10);
-        prove.DisplayingStartingMessage();
+        Activity prueba = new Activity("Prueba", "alalalalall", 10);
+        prueba.DisplayingStartingMessage();
+        prueba.DisplayingEndingMessage();
     }
 }

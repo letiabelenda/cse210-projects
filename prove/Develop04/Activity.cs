@@ -36,16 +36,39 @@ public class Activity {
         {
              Console.Write("\\");
             Thread.Sleep(500);
+            Console.Write("\b \b");
             Console.Write("|");
             Thread.Sleep(500);
+            Console.Write("\b \b");
             Console.Write("/");
             Thread.Sleep(500);
+            Console.Write("\b \b");
             Console.Write("-");
             Thread.Sleep(500);
+            Console.Write("\b \b");
         }
     }
+    public void DisplayingEndingMessage(){
+        Console.WriteLine("Well done!!");
+        Console.WriteLine();
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_activityName} Activity");
 
-    //public DisplayingEndingMessage(){
+        var startTime = DateTime.UtcNow;
 
-    //}
+        while(DateTime.UtcNow - startTime < TimeSpan.FromSeconds(5))
+        {
+             Console.Write("\\");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            Console.Write("|");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            Console.Write("/");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            Console.Write("-");
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+        }
+    }
 }
