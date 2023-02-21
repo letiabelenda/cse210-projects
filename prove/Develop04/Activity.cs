@@ -18,7 +18,6 @@ public class Activity {
     public int GetDuration(){
         return _duration;
     }
-
     public void DisplayingStartingMessage(){
         Console.WriteLine($"Welcome to the {_activityName} Activity");
         Console.WriteLine();
