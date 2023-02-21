@@ -3,10 +3,9 @@ public class Activity {
     protected string _description;
     protected int _duration;
 
-    public Activity(string activityName, string description, int duration) {
-        _activityName = activityName;
-        _description = description;
-        _duration = duration;
+    public Activity() 
+    {
+    
     }
 
     public string GetActivityName(){
@@ -48,6 +47,7 @@ public class Activity {
         }
     }
     public void DisplayingEndingMessage(){
+        Console.WriteLine();
         Console.WriteLine("Well done!!");
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_activityName} Activity");
@@ -69,5 +69,7 @@ public class Activity {
             Thread.Sleep(500);
             Console.Write("\b \b");
         }
+        
+        Console.Clear();
     }
 }
