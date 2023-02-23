@@ -32,7 +32,7 @@ public class Activity {
 
         while(DateTime.UtcNow - startTime < TimeSpan.FromSeconds(5))
         {
-             Console.Write("\\");
+            Console.Write("\\");
             Thread.Sleep(500);
             Console.Write("\b \b");
             Console.Write("|");
@@ -56,7 +56,7 @@ public class Activity {
 
         while(DateTime.UtcNow - startTime < TimeSpan.FromSeconds(5))
         {
-             Console.Write("\\");
+            Console.Write("\\");
             Thread.Sleep(500);
             Console.Write("\b \b");
             Console.Write("|");

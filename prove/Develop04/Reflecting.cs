@@ -54,13 +54,22 @@ public class Reflecting : Activity
     {
         int num = _duration/10;
         int times = 0;
+        
+        List<string> questions = new List<string>(_questions.Count);
 
-        while(times < num)
+        _questions.ForEach((item) =>
+        {
+            questions.Add((string)item.Clone());
+        });
+
+        while(times < num || questions.Count() == 0)
         {
             Random random = new Random();
-            int index = random.Next(_questions.Count());
+            int index = random.Next(questions.Count());
 
-            string question = _questions[index];
+            string question = questions[index];
+            questions.Remove(question);
+            
             Console.WriteLine($"> {question}");
 
             var startTime = DateTime.UtcNow;

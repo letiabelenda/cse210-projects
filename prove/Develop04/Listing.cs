@@ -51,6 +51,5 @@ public class Listing : Activity
 
         int numberAnswers = _answers.Count;
         Console.WriteLine($"You listed {numberAnswers} items!");
-        //Antes de terminar la funcion escribir en archivo
     }
 }
