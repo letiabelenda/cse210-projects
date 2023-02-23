@@ -62,7 +62,7 @@ public class Reflecting : Activity
             questions.Add((string)item.Clone());
         });
 
-        while(times < num || questions.Count() == 0)
+        while(times < num && questions.Count() != 0)
         {
             Random random = new Random();
             int index = random.Next(questions.Count());
