@@ -6,7 +6,7 @@ class Program
     {
         int option;
         int points = 0;
-        
+
         do
         {
             Console.WriteLine($"You have {points} points.");
@@ -23,7 +23,24 @@ class Program
 
             if (option == 1)
             {
+                int choice = 0;
 
+                Console.WriteLine("\nThe types of goals are:\n 1. Simple Goal \n 2. Eternal Goal\n 3. Checklist Goal");
+                Console.WriteLine("Which type of goal do you like to create? ");
+                choice = Int32.Parse(Console.ReadLine());
+
+                if (choice == 1)
+                {
+                    //create a SimpleGoal
+                }
+                else if (choice == 2)
+                {
+                    //create an EternalGoal
+                }
+                else if (choice == 3)
+                {
+                    //create a ChecklistGoal
+                }
             }
 
             else if (option == 2)
