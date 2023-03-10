@@ -1,14 +1,11 @@
 public class EternalGoal : Goal
 {
-    private Boolean _isComplete;
-
     public EternalGoal(string type, string name, string description, int points) : base(type, name, description, points)
     {
-        _isComplete = false;
-    }
 
-    public Boolean SetIsComplete()
+    }
+    public override void RecordEvent(Quest quest)
     {
-        return _isComplete = true;
+        
     }
 }

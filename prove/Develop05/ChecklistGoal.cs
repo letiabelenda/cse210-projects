@@ -17,10 +17,6 @@ public class ChecklistGoal : Goal
     {
         _counter += _counter;
     }
-    public Boolean SetIsComplete()
-    {
-        return _isComplete = true;
-    }
     public int GetBonus()
     {
         return _bonus;
@@ -34,13 +30,14 @@ public class ChecklistGoal : Goal
         return _times;
     }
 
+    public override void RecordEvent(Quest quest)
+    {
+       _isComplete = true;
+       
+    }
     public override void SaveFile()
     {
         base.SaveFile();
-    }
-    public override void RecordEvent()
-    {
-        base.RecordEvent();
     }
 
 }

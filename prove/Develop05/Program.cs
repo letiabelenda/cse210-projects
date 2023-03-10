@@ -62,7 +62,24 @@ class Program
             
             else if (option == 5)
             {
-                
+                int number = 0;
+
+                Console.Write("The goals are:");
+
+                foreach (Goal goal in quest.GetListGoals())
+                {
+                    Console.WriteLine($"{number + 1}. {goal.GetName}");
+                }
+
+                Console.WriteLine("Which goal did you accomplished? ");
+                int answer = Int32.Parse(Console.ReadLine());
+
+                int points = quest.GetListGoals()[answer - 1].GetPoints();
+                Console.WriteLine($"Congratulations! You have earned {points} points!");
+
+                quest.AddPoints(points);
+                Console.WriteLine($"You now have {quest.GetTotalPoints()}");
+
             }
 
         }while(option == 6);

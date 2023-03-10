@@ -24,6 +24,10 @@ public class Quest
     {
         return _totalPoints;
     }
+    public List<Goal> GetListGoals()
+    {
+        return _listGoals;
+    }
     public void ListGoals()
     {
         foreach (Goal goal in _listGoals)

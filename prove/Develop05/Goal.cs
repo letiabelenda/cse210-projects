@@ -1,4 +1,4 @@
-public class Goal
+public abstract class Goal
 {
     protected string _type;
     protected string _name;
@@ -30,10 +30,8 @@ public class Goal
         return _points;
     }
 
-    public virtual void RecordEvent()
-    {
+    public abstract void RecordEvent(Quest quest);
 
-    }
     public void LoadFile()
     {
         //tengo que pasarle quest
