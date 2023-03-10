@@ -10,10 +10,10 @@ public class Goal
         _type = type;
         _name = name;
         _description = description;
-        _points = 0;
+        _points = points;
     }
 
-    public string GetType()
+    public string GetTypeGoal()
     {
         return _type;
     }
@@ -32,7 +32,7 @@ public class Goal
 
     public virtual void RecordEvent()
     {
-
+        
     }
     public void LoadFile()
     {

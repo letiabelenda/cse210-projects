@@ -5,18 +5,21 @@ public class ChecklistGoal : Goal
     private int _bonus;
     private Boolean _isComplete;
 
-    public ChecklistGoal(string type, string name, string description, in points, int times) : base(type, name, description, points)
+    public ChecklistGoal(string type, string name, string description, int points, int times, int bonus) : base(type, name, description, points)
     {
-
+        _isComplete = false;
+        _times = times;
+        _counter = 0;
+        _bonus = bonus;
     }
 
     public void SetCounter()
     {
-
+        _counter += _counter;
     }
     public Boolean SetIsComplete()
     {
-        return _isComplete = false;
+        return _isComplete = true;
     }
     public int GetBonus()
     {
@@ -34,10 +37,6 @@ public class ChecklistGoal : Goal
     public override void SaveFile()
     {
         base.SaveFile();
-    }
-    public Boolean IsComplete()
-    {
-        return _isComplete = true;
     }
     public override void RecordEvent()
     {

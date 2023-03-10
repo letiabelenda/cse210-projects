@@ -5,11 +5,11 @@ class Program
     static void Main(string[] args)
     {
         int option;
-        int points = 0;
+        
 
         do
         {
-            Console.WriteLine($"You have {points} points.");
+            Console.WriteLine($"You have {} points.");
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
             Console.WriteLine(" 1. Creat New Goal");
