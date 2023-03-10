@@ -31,8 +31,9 @@ class Program
                 choice = Int32.Parse(Console.ReadLine());
 
                 if (choice == 1)
-                {
+                {   
                     //create a SimpleGoal
+                    SimpleGoal goal = new SimpleGoal("SimpleGoal", );
                 }
                 else if (choice == 2)
                 {

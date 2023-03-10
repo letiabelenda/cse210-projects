@@ -24,18 +24,27 @@ public class Quest
     {
         return _totalPoints;
     }
-    public void PrintList()
+    public void ListGoals()
     {
         foreach (Goal goal in _listGoals)
         {   
             if (goal.GetTypeGoal() == "SimpleGoal")
             {
-                
+                //imprimir la simpleGoal como en el video
+                Console.WriteLine();
+            }
+            else if (goal.GetTypeGoal() == "EternalGoal")
+            {
+                Console.WriteLine(); //imprimir Eternal Goal como en el video
+            }
+            else 
+            {
+                Console.WriteLine(); //imprimir Checklist como en el video
             }
         }
     }
-    public int CalculatePoints()
+    public void AddPoints(int points)
     {
-        return 0;
+        _totalPoints += points;
     }
 }
