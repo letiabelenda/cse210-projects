@@ -32,11 +32,11 @@ public class Goal
 
     public virtual void RecordEvent()
     {
-        
+
     }
     public void LoadFile()
     {
-
+        //tengo que pasarle quest
     }
     public virtual void SaveFile()
     {

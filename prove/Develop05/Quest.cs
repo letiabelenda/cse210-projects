@@ -3,9 +3,8 @@ public class Quest
     private List<Goal> _listGoals = new List<Goal>();
     private int _totalPoints;
 
-    public Quest(List<Goal> listGoals)
+    public Quest()
     {
-        _listGoals = listGoals;
         _totalPoints = 0;
     }
 
@@ -27,7 +26,13 @@ public class Quest
     }
     public void PrintList()
     {
-
+        foreach (Goal goal in _listGoals)
+        {   
+            if (goal.GetTypeGoal() == "SimpleGoal")
+            {
+                
+            }
+        }
     }
     public int CalculatePoints()
     {

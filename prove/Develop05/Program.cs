@@ -6,10 +6,11 @@ class Program
     {
         int option;
         
-
+        Quest quest = new Quest();
+        
         do
         {
-            Console.WriteLine($"You have {} points.");
+            Console.WriteLine($"You have {quest.GetTotalPoints()} points.");
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
             Console.WriteLine(" 1. Creat New Goal");
