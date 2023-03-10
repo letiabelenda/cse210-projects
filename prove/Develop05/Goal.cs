@@ -36,10 +36,8 @@ public abstract class Goal
     {
         //tengo que pasarle quest
     }
-    public virtual void SaveFile()
-    {
+    public abstract void SaveFile();
 
-    }
 
 
 

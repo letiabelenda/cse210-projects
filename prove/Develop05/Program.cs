@@ -33,15 +33,42 @@ class Program
                 if (choice == 1)
                 {   
                     //create a SimpleGoal
-                    SimpleGoal goal = new SimpleGoal("SimpleGoal", );
+                    Console.WriteLine("What is the name of your goal? ");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("What is a short description of it? ");
+                    string description = Console.ReadLine();
+                    Console.WriteLine("What is the amount of points associated with this goal? ");
+                    int points = Int32.Parse(Console.ReadLine());
+
+                    SimpleGoal goal = new SimpleGoal("SimpleGoal", name, description, points);
                 }
                 else if (choice == 2)
                 {
                     //create an EternalGoal
+                    Console.WriteLine("What is the name of your goal? ");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("What is a short description of it? ");
+                    string description = Console.ReadLine();
+                    Console.WriteLine("What is the amount of points associated with this goal? ");
+                    int points = Int32.Parse(Console.ReadLine());
+
+                    EternalGoal goal = new EternalGoal("EternalGoal", name, description, points);
                 }
                 else if (choice == 3)
                 {
                     //create a ChecklistGoal
+                    Console.WriteLine("What is the name of your goal? ");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("What is a short description of it? ");
+                    string description = Console.ReadLine();
+                    Console.WriteLine("What is the amount of points associated with this goal? ");
+                    int points = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("How many times does this goal need to be accomplished for a bonus? ");
+                    int times = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("What is the bonus for accomplishing it that many times? ");
+                    int bonus = Int32.Parse(Console.ReadLine());
+
+                    ChecklistGoal goal = new ChecklistGoal("ChecklistGoal", name, description, points, times, bonus);
                 }
             }
 
@@ -75,10 +102,14 @@ class Program
                 int answer = Int32.Parse(Console.ReadLine());
 
                 int points = quest.GetListGoals()[answer - 1].GetPoints();
+
                 Console.WriteLine($"Congratulations! You have earned {points} points!");
 
                 quest.AddPoints(points);
-                Console.WriteLine($"You now have {quest.GetTotalPoints()}");
+
+                quest.GetListGoals()[answer - 1].RecordEvent(quest);
+
+                Console.WriteLine($"You now have {quest.GetTotalPoints()} points.");
 
             }
 

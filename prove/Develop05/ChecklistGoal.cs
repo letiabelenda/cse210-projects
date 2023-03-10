@@ -32,12 +32,19 @@ public class ChecklistGoal : Goal
 
     public override void RecordEvent(Quest quest)
     {
-       _isComplete = true;
-       
+       SetCounter();
+
+       if (_counter == _times)
+       {
+            _isComplete = true;
+            quest.AddPoints(_bonus);
+       }
+
+
     }
     public override void SaveFile()
     {
-        base.SaveFile();
+        throw new NotImplementedException();
     }
 
 }
