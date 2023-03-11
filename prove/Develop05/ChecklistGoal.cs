@@ -29,7 +29,10 @@ public class ChecklistGoal : Goal
     {
         return _times;
     }
-
+    public Boolean IsCompleted()
+    {
+        return _isComplete;
+    }
     public override void RecordEvent(Quest quest)
     {
         this.SetCounter();

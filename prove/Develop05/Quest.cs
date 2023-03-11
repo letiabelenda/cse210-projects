@@ -28,7 +28,15 @@ public class Quest
         {   
             if (goal.GetTypeGoal() == "SimpleGoal")
             {
+                SimpleGoal simpleGoal = goal as SimpleGoal;
+                if (simpleGoal.IsCompleted())
+                {
+                    Console.WriteLine($"{index}. [X] {goal.GetName()} ({goal.GetDescription()})");
+                }
+                
                 Console.WriteLine($"{index}. [ ] {goal.GetName()} ({goal.GetDescription()})");
+
+                
             }
             else if (goal.GetTypeGoal() == "EternalGoal")
             {
@@ -37,6 +45,11 @@ public class Quest
             else 
             {
                 ChecklistGoal checklistGoal = goal as ChecklistGoal;
+                if (checklistGoal.IsCompleted())
+                {
+                    Console.WriteLine($"{index}. [X] {goal.GetName()} ({goal.GetDescription()}) -- Currently completed: {checklistGoal.GetCounter().ToString()}/{checklistGoal.GetTimes().ToString()}");
+                }
+                
                 Console.WriteLine($"{index}. [ ] {goal.GetName()} ({goal.GetDescription()}) -- Currently completed: {checklistGoal.GetCounter().ToString()}/{checklistGoal.GetTimes().ToString()}");
             }
 

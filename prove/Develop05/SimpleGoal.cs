@@ -6,6 +6,11 @@ public class SimpleGoal : Goal
     {
         _isComplete = false;
     }
+
+    public Boolean IsCompleted()
+    {
+        return _isComplete;
+    }
     public override void RecordEvent(Quest quest)
     {
        _isComplete = true;
