@@ -27,7 +27,8 @@ public class Quest
     public void ListGoals()
     {   
         int index = 1;
-
+        Console.WriteLine("The goals are: ");
+        
         foreach (Goal goal in _listGoals)
         {   
             if (goal.GetTypeGoal() == "SimpleGoal")
