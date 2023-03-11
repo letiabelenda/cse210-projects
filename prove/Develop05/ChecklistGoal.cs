@@ -12,6 +12,14 @@ public class ChecklistGoal : Goal
         _counter = 0;
         _bonus = bonus;
     }
+    public ChecklistGoal(string type, string name, string description, int points, int bonus, int times, int counter) : base(type, name, description, points)
+    {
+        _isComplete = false;
+        _times = times;
+        _counter = 0;
+        _bonus = bonus;
+    }
+
 
     public void SetCounter()
     {

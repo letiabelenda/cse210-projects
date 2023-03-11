@@ -20,6 +20,10 @@ public class Quest
     {
         return _listGoals;
     }
+    public void SetTotalPoints(int totalPoints)
+    {
+        _totalPoints = totalPoints;
+    }
     public void ListGoals()
     {   
         int index = 1;

@@ -6,6 +6,10 @@ public class SimpleGoal : Goal
     {
         _isComplete = false;
     }
+    public SimpleGoal(string type, string name, string description, int points, Boolean isComplete) : base(type, name, description, points)
+    {
+        _isComplete = isComplete;
+    }
 
     public Boolean IsCompleted()
     {
