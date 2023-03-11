@@ -116,6 +116,7 @@ class Program
                 quest.AddPoints(points);
 
                 quest.GetListGoals()[answer - 1].RecordEvent(quest);
+                Console.WriteLine($"Congratulations! You have earned {points} points!");
                 Console.WriteLine($"You now have {quest.GetTotalPoints()} points.");
 
             }

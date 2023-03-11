@@ -16,7 +16,7 @@ public class ChecklistGoal : Goal
     {
         _isComplete = false;
         _times = times;
-        _counter = 0;
+        _counter = counter;
         _bonus = bonus;
     }
 
