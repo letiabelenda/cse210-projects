@@ -33,9 +33,10 @@ public class Quest
                 {
                     Console.WriteLine($"{index}. [X] {goal.GetName()} ({goal.GetDescription()})");
                 }
-                
-                Console.WriteLine($"{index}. [ ] {goal.GetName()} ({goal.GetDescription()})");
-
+                else
+                {
+                    Console.WriteLine($"{index}. [ ] {goal.GetName()} ({goal.GetDescription()})");
+                }
                 
             }
             else if (goal.GetTypeGoal() == "EternalGoal")
@@ -50,7 +51,10 @@ public class Quest
                     Console.WriteLine($"{index}. [X] {goal.GetName()} ({goal.GetDescription()}) -- Currently completed: {checklistGoal.GetCounter().ToString()}/{checklistGoal.GetTimes().ToString()}");
                 }
                 
-                Console.WriteLine($"{index}. [ ] {goal.GetName()} ({goal.GetDescription()}) -- Currently completed: {checklistGoal.GetCounter().ToString()}/{checklistGoal.GetTimes().ToString()}");
+                else 
+                {
+                    Console.WriteLine($"{index}. [ ] {goal.GetName()} ({goal.GetDescription()}) -- Currently completed: {checklistGoal.GetCounter().ToString()}/{checklistGoal.GetTimes().ToString()}");
+                }
             }
 
             index = index + 1;
