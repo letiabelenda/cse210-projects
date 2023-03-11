@@ -6,7 +6,7 @@ public class EternalGoal : Goal
     }
     public override void RecordEvent(Quest quest)
     {
-        
+        Console.WriteLine($"Congratulations! You have earned {this.GetPoints()} points!");
     }
     public override void SaveGoal(StreamWriter outputFile)
     {

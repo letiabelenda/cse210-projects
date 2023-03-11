@@ -18,6 +18,7 @@ public class SimpleGoal : Goal
     public override void RecordEvent(Quest quest)
     {
        _isComplete = true;
+       Console.WriteLine($"Congratulations! You have earned {this.GetPoints()} points!");
     }
     public override void SaveGoal(StreamWriter outputFile)
     {
