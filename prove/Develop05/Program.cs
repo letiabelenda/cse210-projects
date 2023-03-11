@@ -83,13 +83,15 @@ class Program
             
             else if (option == 3)
             {
-                
+                quest.SaveFile();
             }
 
             else if (option == 4)
             {
                 Console.Write("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
+
+                quest = new Quest();
 
                 quest.LoadFile(fileName);
             }

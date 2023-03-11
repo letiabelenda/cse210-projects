@@ -8,11 +8,8 @@ public class EternalGoal : Goal
     {
         
     }
-    public override void SaveGoal(string fileName)
+    public override void SaveGoal(StreamWriter outputFile)
     {
-         using (StreamWriter outputFile = new StreamWriter(fileName))
-        {
-            outputFile.WriteLine($"EternalGoal:{this.GetName()},{this.GetDescription()},{this.GetPoints()}");
-        }
+        outputFile.WriteLine($"EternalGoal:{this.GetName()},{this.GetDescription()},{this.GetPoints()}");
     }
 }

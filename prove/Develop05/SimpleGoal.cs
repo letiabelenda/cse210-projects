@@ -19,12 +19,11 @@ public class SimpleGoal : Goal
     {
        _isComplete = true;
     }
-    public override void SaveGoal(string fileName)
+    public override void SaveGoal(StreamWriter outputFile)
     {
-        using (StreamWriter outputFile = new StreamWriter(fileName))
-        {
-            outputFile.WriteLine($"SimpleGoal:{this.GetName()},{this.GetDescription()},{this.GetPoints()},{this.IsCompleted()}");
-        }
+
+        outputFile.WriteLine($"SimpleGoal:{this.GetName()},{this.GetDescription()},{this.GetPoints()},{this.IsCompleted()}");
+
     }
 
 }

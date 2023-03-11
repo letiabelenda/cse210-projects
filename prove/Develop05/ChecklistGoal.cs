@@ -58,12 +58,11 @@ public class ChecklistGoal : Goal
 
 
     }
-    public override void SaveGoal(string fileName)
+    public override void SaveGoal(StreamWriter outputFile)
     {
-         using (StreamWriter outputFile = new StreamWriter(fileName))
-        {
-            outputFile.WriteLine($"ChecklistGoal:{this.GetName()},{this.GetDescription()},{this.GetPoints()},{this.GetBonus()},{this.GetTimes()},{this.GetCounter()}");
-        }
+
+        outputFile.WriteLine($"ChecklistGoal:{this.GetName()},{this.GetDescription()},{this.GetPoints()},{this.GetBonus()},{this.GetTimes()},{this.GetCounter()}");
+
     }
 
 }

@@ -106,9 +106,10 @@ public class Quest
 
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
+            outputFile.WriteLine($"{this.GetTotalPoints()}");
             foreach (Goal goal in _listGoals)
             {
-                goal.SaveGoal(fileName);
+                goal.SaveGoal(outputFile);
             }
         }       
     }

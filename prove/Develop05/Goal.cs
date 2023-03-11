@@ -33,7 +33,7 @@ public abstract class Goal
     public abstract void RecordEvent(Quest quest);
 
     
-    public abstract void SaveGoal(string fileName);
+    public abstract void SaveGoal(StreamWriter outputFile);
 
 
 
