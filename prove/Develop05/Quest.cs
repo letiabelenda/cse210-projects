@@ -68,4 +68,48 @@ public class Quest
     {
         _totalPoints += points;
     }
+    public void LoadFile(string fileName)
+    {
+        string[] goals = System.IO.File.ReadAllLines(fileName);
+        int totalPoints = Int32.Parse(goals[0]);
+        this.SetTotalPoints(totalPoints);
+
+        goals = goals.Skip(1).ToArray();
+    
+        foreach (string goal in goals)
+        {
+            string[] parts = goal.Split(",");
+            string[] firstPart = parts[0].Split(":");
+
+            if (firstPart[0] == "SimpleGoal")
+            {
+                SimpleGoal simpleGoal = new SimpleGoal(firstPart[0], firstPart[1], parts[1], Int32.Parse(parts[2]), bool.Parse(parts[3]));
+                this.AddGoal(simpleGoal);
+            }
+            else if (firstPart[0] == "EternalGoal")
+            {
+                EternalGoal eternalGoal = new EternalGoal(firstPart[0], firstPart[1], parts[1], Int32.Parse(parts[2]));
+                this.AddGoal(eternalGoal);
+            }
+            else
+            {
+                ChecklistGoal checklistGoal = new ChecklistGoal(firstPart[0], firstPart[1], parts[1], Int32.Parse(parts[2]), Int32.Parse(parts[3]), Int32.Parse(parts[4]), Int32.Parse(parts[5]));
+                this.AddGoal(checklistGoal);
+            }
+
+        }
+    }
+     public void SaveFile()
+    {
+        Console.Write("What is the filename for the goal file? ");
+        string fileName = Console.ReadLine();
+
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            foreach (Goal goal in _listGoals)
+            {
+                goal.SaveGoal(fileName);
+            }
+        }       
+    }
 }

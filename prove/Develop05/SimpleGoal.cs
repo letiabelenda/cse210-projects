@@ -19,9 +19,12 @@ public class SimpleGoal : Goal
     {
        _isComplete = true;
     }
-    public override void SaveFile()
+    public override void SaveGoal(string fileName)
     {
-        throw new NotImplementedException();
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            outputFile.WriteLine($"SimpleGoal:{this.GetName()},{this.GetDescription()},{this.GetPoints()},{this.IsCompleted()}");
+        }
     }
 
 }
