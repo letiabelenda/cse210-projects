@@ -21,22 +21,26 @@ public class Quest
         return _listGoals;
     }
     public void ListGoals()
-    {
+    {   
+        int index = 1;
+
         foreach (Goal goal in _listGoals)
         {   
             if (goal.GetTypeGoal() == "SimpleGoal")
             {
-                //imprimir la simpleGoal como en el video
-                Console.WriteLine();
+                Console.WriteLine($"{index}. [ ] {goal.GetName()} ({goal.GetDescription()})");
             }
             else if (goal.GetTypeGoal() == "EternalGoal")
             {
-                Console.WriteLine(); //imprimir Eternal Goal como en el video
+                Console.WriteLine($"{index}. [ ] {goal.GetName()} ({goal.GetDescription()})");
             }
             else 
             {
-                Console.WriteLine(); //imprimir Checklist como en el video
+                ChecklistGoal checklistGoal = goal as ChecklistGoal;
+                Console.WriteLine($"{index}. [ ] {goal.GetName()} ({goal.GetDescription()}) -- Currently completed: {checklistGoal.GetCounter().ToString()}/{checklistGoal.GetTimes().ToString()}");
             }
+
+            index = index + 1;
         }
     }
     public void AddPoints(int points)

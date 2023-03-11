@@ -98,9 +98,10 @@ class Program
 
                 foreach (Goal goal in quest.GetListGoals())
                 {
-                    Console.WriteLine($"{number + 1}. {goal.GetName}");
+                    Console.WriteLine($"{number}. {goal.GetName}");
+                    number = number + 1;
                 }
-
+                
                 Console.WriteLine("Which goal did you accomplished? ");
                 int answer = Int32.Parse(Console.ReadLine());
 
