@@ -10,10 +10,11 @@ class Program
         
         do
         {
+            Console.WriteLine();
             Console.WriteLine($"You have {quest.GetTotalPoints()} points.");
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
-            Console.WriteLine(" 1. Creat New Goal");
+            Console.WriteLine(" 1. Create New Goal");
             Console.WriteLine(" 2. List Goals");
             Console.WriteLine(" 3. Save Goals");
             Console.WriteLine(" 4. Load Goals");
@@ -77,7 +78,7 @@ class Program
 
             else if (option == 2)
             {
-                
+                quest.ListGoals();
             }
             
             else if (option == 3)
@@ -92,27 +93,24 @@ class Program
             
             else if (option == 5)
             {
-                int number = 0;
+                int number = 1;
 
-                Console.Write("The goals are:");
+                Console.WriteLine("The goals are:");
 
                 foreach (Goal goal in quest.GetListGoals())
                 {
-                    Console.WriteLine($"{number}. {goal.GetName}");
+                    Console.WriteLine($"{number}. {goal.GetName()}");
                     number = number + 1;
                 }
                 
-                Console.WriteLine("Which goal did you accomplished? ");
+                Console.Write("Which goal did you accomplished? ");
                 int answer = Int32.Parse(Console.ReadLine());
 
                 int points = quest.GetListGoals()[answer - 1].GetPoints();
 
-                Console.WriteLine($"Congratulations! You have earned {points} points!");
-
                 quest.AddPoints(points);
 
                 quest.GetListGoals()[answer - 1].RecordEvent(quest);
-
                 Console.WriteLine($"You now have {quest.GetTotalPoints()} points.");
 
             }

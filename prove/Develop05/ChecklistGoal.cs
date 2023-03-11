@@ -15,7 +15,7 @@ public class ChecklistGoal : Goal
 
     public void SetCounter()
     {
-        _counter += _counter;
+        _counter = _counter + 1;
     }
     public int GetBonus()
     {
@@ -32,13 +32,18 @@ public class ChecklistGoal : Goal
 
     public override void RecordEvent(Quest quest)
     {
-       SetCounter();
+        this.SetCounter();
 
-       if (_counter == _times)
-       {
+       int points = _points;
+
+        if (_counter == _times)
+        {
             _isComplete = true;
             quest.AddPoints(_bonus);
-       }
+            points = points + _bonus;
+        }
+
+        Console.WriteLine($"Congratulations! You have earned {points} points!");
 
 
     }
