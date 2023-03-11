@@ -6,6 +6,10 @@ public class EternalGoal : Goal
     }
     public override void RecordEvent(Quest quest)
     {
-        
+
+    }
+    public override void SaveFile()
+    {
+        throw new NotImplementedException();
     }
 }

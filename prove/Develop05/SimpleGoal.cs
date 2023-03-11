@@ -10,5 +10,9 @@ public class SimpleGoal : Goal
     {
        _isComplete = true;
     }
+    public override void SaveFile()
+    {
+        throw new NotImplementedException();
+    }
 
 }

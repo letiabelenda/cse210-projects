@@ -8,15 +8,7 @@ public class Quest
         _totalPoints = 0;
     }
 
-    public void AddSimpleGoal(SimpleGoal goal)
-    {
-        _listGoals.Add(goal);
-    }
-    public void AddEternalGoal(EternalGoal goal)
-    {
-        _listGoals.Add(goal);
-    }
-    public void AddChecklistGoal(ChecklistGoal goal)
+    public void AddGoal(Goal goal)
     {
         _listGoals.Add(goal);
     }
