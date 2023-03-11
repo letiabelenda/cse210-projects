@@ -52,11 +52,10 @@ public class ChecklistGoal : Goal
             _isComplete = true;
             quest.AddPoints(_bonus);
             points = points + _bonus;
+            Console.WriteLine($"Congratulations! You have earned {points} points!");
         }
 
-        Console.WriteLine($"Congratulations! You have earned {points} points!");
-
-
+        Console.WriteLine($"Congratulations! You have earned {this.GetPoints()} points!");
     }
     public override void SaveGoal(StreamWriter outputFile)
     {
