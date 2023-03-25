@@ -1,0 +1,115 @@
+Milk,55,1,L,groceries
+Butter,84,0.2,kg,groceries
+Eggs,120,1,dozen,groceries
+Yogurt,69,1,L,groceries
+Chocolate Milk,57,1,L,groceries
+Jelly,25,1,unit,groceries
+Juice,260,3,L,groceries
+Noodles,103,0.5,kg,groceries
+Cake,104,1,unit,groceries
+Strawberry,99,1,kg,fruit
+Banana,112,1,kg,fruit
+Blueberry,69125,grs,fruit
+Onion,99,1,kg,vegetable
+Orange,34,1,kg,fruit
+Lemon,44,1,kg,fruit
+Carrot,49,1,kg,vegetable
+Potato,45,1,kg,vegetable
+Apple,74,1,kg,fruit
+Bellpepper,199,1,kg,vegetable
+Tomato,119,1,kg,vegetable
+Avocado,59,1,unit,vegetable
+Lettuce,24,1,unit,vegetable
+Pear,99,1,kg,fruit
+Corn,50,1,unit,vegetable
+Garlic,30,1,unit,vegetable
+Kiwi,229,1,kg,fruit
+Zuchini,79,1,kg,vegetable
+Eggplant,135,1,kg,vegetable
+Broccoli,79,1,kg,vegetable
+Melon,114,1,kg,fruit
+Sweet Potato,64,1,kg,vegetable
+Cucumber,69,1,kg,vegetable
+Cabbage,69,1,kg,vegetable
+Cauliflower,64,1,kg,vegetable
+Mango,249,1,kg,fruit
+Ginger,139,1,kg,vegetable
+Pineapple,141,1,kg,fruit
+Grapefruit,89,1,kg,fruit
+Grape,219,1,kg,fruit
+Watermelon,59,1,kg,fruit
+Plum,179,1,kg,fruit
+Green Bean,129,1,kg,vegetable
+Chicken Supreme,199,1,kg,meat
+Minced Meat,389,1,kg,meat
+Pork,219,1,kg,meat
+Chicken,372,1,unit,meat
+Asado,259,1,kg,meat
+Steak,145,1,kg,meat
+Sausage,369,1,kg,meat
+Liver,139,1,kg,meat
+Chicken Thigh,265,1,kg,meat
+Blood Sausage,285,1,kg,meat
+Lamb,450,1,kg,meat
+Cow Ribs,325,1,kg,meat
+Parmesan,837,1,kg,groceries
+Grated Cheese,202,0.2,kg,groceries
+Hot Dogs,153,1,unit,meat
+Salami,180,0.1,kg,meat
+Mortadella,92,0.2kg,meat
+Ham,520,1,kg,meat
+Pate,722,1,kg,meat
+Sugar,55,1,kg,groceries
+Rice,52,1,kg,groceries
+Bread,119,0.5,kg,groceries
+Flour,59,1,kg,groceries
+Oil,125,1,L,groceries
+Salt,50,0.5,kg,groceries
+Salty Cookies,120,1,kg,groceries
+Oat,74,0.5,kg,groceries
+Vinegar,68,1,L,groceries
+Mayonnaise,144,0.5,kg,groceries
+Polenta,42,0.5grs,kg,groceries
+Tomato Pulp,62,1,L,groceries
+Tuna,55,1,unit,meat
+Cookies,55,1,unit,groceries
+Lentils,85,0.5,kg,groceries
+Dulce De Leche,110,0.5,kg,groceries
+Ketchup,164,0.5,kg,groceries
+Cornstarch,74,0.2,kg,groceries
+Olive Oil,293,0.5,L,groceries
+Cereal,133,0.25,kg,groceries
+Cocoa,97,0.25,kg,groceries
+Honey,203,0.5kg,groceries
+Sweetener,142,1,unit,groceries
+Olive,59,0.1,kg,groceries
+Yeast,28,1,unit,groceries
+Vanilla,150,1,unit,groceries
+Soy Sauce,134,1,unit,groceries
+Chips,135,1,unit,groceries
+Beans,39,0.3,kg,groceries
+Peanut Butter,209,0.25,kg,groceries
+Brown Sugar,149,0.5,kg,groceries
+Jam,151,0.35,kg,groceries
+Rice Noodles,62,1,unit,groceries
+Ice Cream,264,1,L,groceries
+Hamburger,330,1,unit,meat
+Pizza,250,1,unit,groceries
+Salmon,700,0.5,kg,meat
+Water,50,1,unit,groceries
+Coca Cola,125,1,unit,groceries
+Sprite,125,1,unit,groceries
+Hypochlorite,125,1,unit,cleaning
+Toilet Paper,228,1,unit,cleaning
+Detergent,165,1,unit,cleaning
+Floor Wax,215,1,L,cleaning
+Napkin,222,1,unit,cleaning
+Kitchen Sponge,99,1,unit,cleaning
+Cloth Softener,349,1,unit,cleaning
+Waste Bag,163,1,unit,cleaning
+Soap Powder,139,1,unit,cleaning
+Kitchen Gloves,139,1,unit,cleaning
+Toothpaste,319,1,unit,cleaning
+Soap,50,1,unit,cleaning
+Shampoo,435,1,unit,cleaning
+Conditioner,398,1,unit,cleaning

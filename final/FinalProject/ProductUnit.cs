@@ -11,8 +11,8 @@ public class ProductUnit : Product
     {
         return _quantity;
     }
-    public override float CalculateAmount(float quantity)
+    public override float CalculateAmount(float userQuantity)
     {
-        return quantity;
+        return userQuantity * price;
     }
 }
