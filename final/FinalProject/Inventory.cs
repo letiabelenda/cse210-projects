@@ -12,12 +12,14 @@ public class Inventory
 
             if(parts[3] == "unit")
             {
-                ProductUnit productUnit = new ProductUnit(parts[0], parts[1], parts[2], parts[4])
+                ProductType productType = new ProductType(parts[4]);
+                ProductUnit productUnit = new ProductUnit(parts[0], Int32.Parse(parts[1]), Int32.Parse(parts[2]), productType);
                 _listProducts.Add(productUnit);
             }
             else
             {
-                ProductNoUnit ProductNoUnit = new ProductNoUnit(parts[0], parts[1], parts[2], parts[3], parts[4])
+                ProductType productType = new ProductType(parts[4]);
+                ProductNoUnit ProductNoUnit = new ProductNoUnit(parts[0], Int32.Parse(parts[1]), Int32.Parse(parts[2]), Int32.Parse(parts[3]), productType);
                 _listProducts.Add(ProductNoUnit);
             }
         }
@@ -25,12 +27,12 @@ public class Inventory
 
     public void ListProducts()
     {       
-        int index = 0;
-        Console.WriteLine("The products are:")
+        Console.WriteLine("The products are:");
 
         foreach (Product product in _listProducts)
         {
-
+            if (product)
+            Console.WriteLine($"{product.GetName} - {product.} - {product.GetPrice}");
         }
 
     }

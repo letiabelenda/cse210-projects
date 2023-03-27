@@ -15,7 +15,7 @@ public class Purchase
 
     public void AddProduct()
     {
-
+        
     }
     public void RemoveProduct()
     {
@@ -27,7 +27,16 @@ public class Purchase
     }
     public void SaveFile()
     {
+       Console.Write("What is the filename for the goal file? ");
+       string fileName = Console.ReadLine();
 
+       using (StreamWriter outputFile = new StreamWriter(fileName))
+       {
+            foreach (Product product in _listProducts)
+            {
+
+            }
+       }       
     }
     public void LoadFile()
     {
