@@ -1,9 +1,9 @@
 public class ProductNoUnit : Product
 {
     private float _quantity;
-    private float _measure;
+    private string _measure;
 
-    public ProductNoUnit(string name, float price, float quantity, float measure, ProductType type): base(name, price, type)
+    public ProductNoUnit(string name, float price, float quantity, string measure, ProductType type): base(name, price, type)
     {
         _quantity = quantity;
         _measure = measure;
@@ -14,7 +14,7 @@ public class ProductNoUnit : Product
     {
         return _quantity;
     }
-    public float GetMeasure()
+    public string GetMeasure()
     {
         return _measure;
     }

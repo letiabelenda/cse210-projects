@@ -9,7 +9,7 @@ Noodles,103,0.5,kg,groceries
 Cake,104,1,unit,groceries
 Strawberry,99,1,kg,fruit
 Banana,112,1,kg,fruit
-Blueberry,69125,grs,fruit
+Blueberry,69,0.125,grs,fruit
 Onion,99,1,kg,vegetable
 Orange,34,1,kg,fruit
 Lemon,44,1,kg,fruit
@@ -56,7 +56,7 @@ Parmesan,837,1,kg,groceries
 Grated Cheese,202,0.2,kg,groceries
 Hot Dogs,153,1,unit,meat
 Salami,180,0.1,kg,meat
-Mortadella,92,0.2kg,meat
+Mortadella,92,0.2,kg,meat
 Ham,520,1,kg,meat
 Pate,722,1,kg,meat
 Sugar,55,1,kg,groceries
@@ -69,7 +69,7 @@ Salty Cookies,120,1,kg,groceries
 Oat,74,0.5,kg,groceries
 Vinegar,68,1,L,groceries
 Mayonnaise,144,0.5,kg,groceries
-Polenta,42,0.5grs,kg,groceries
+Polenta,42,0.5,grs,kg,groceries
 Tomato Pulp,62,1,L,groceries
 Tuna,55,1,unit,meat
 Cookies,55,1,unit,groceries
@@ -80,7 +80,7 @@ Cornstarch,74,0.2,kg,groceries
 Olive Oil,293,0.5,L,groceries
 Cereal,133,0.25,kg,groceries
 Cocoa,97,0.25,kg,groceries
-Honey,203,0.5kg,groceries
+Honey,203,0.5,kg,groceries
 Sweetener,142,1,unit,groceries
 Olive,59,0.1,kg,groceries
 Yeast,28,1,unit,groceries

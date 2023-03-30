@@ -8,6 +8,7 @@ class Program
         Console.WriteLine("Remember to always write the name of the products with capital letter at the beginning of every word");
         int option;
         Inventory inventory = new Inventory();
+        inventory.LoadProducts();
 
         do
         {
@@ -27,7 +28,7 @@ class Program
 
             else if (option == 2)
             {
-                
+                Console.WriteLine();
             }
 
             else if (option == 3)
