@@ -3,9 +3,11 @@ public class ProductNoUnit : Product
     private float _quantity;
     private float _measure;
 
-    public ProductNoUnit(string name, float price, float quantity, float _measure ProductType type): base(name, price, type)
+    public ProductNoUnit(string name, float price, float quantity, float measure, ProductType type): base(name, price, type)
     {
-
+        _quantity = quantity;
+        _measure = measure;
+        _isProductUnit = false;
     }
 
     public float GetQuantity()
@@ -18,6 +20,6 @@ public class ProductNoUnit : Product
     }
     public override float CalculateAmount(float userQuantity)
     {
-        return (userQuantity * price) / _quantity;
+        return (userQuantity * _price) / _quantity;
     }
 }

@@ -3,6 +3,7 @@ public abstract class Product
     protected string _name;
     protected float _price;
     protected ProductType _type;
+    protected Boolean _isProductUnit;
 
     public Product(string name, float price, ProductType type)
     {
@@ -22,6 +23,10 @@ public abstract class Product
     public ProductType GetProductType()
     {
         return _type;
+    }
+    public Boolean GetIsProductUnit()
+    {
+        return _isProductUnit;
     }
     public abstract float CalculateAmount(float quantity);
 }

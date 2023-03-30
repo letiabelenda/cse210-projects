@@ -5,6 +5,7 @@ public class ProductUnit : Product
     public ProductUnit(string name, float price, int quantity, ProductType type) : base(name, price, type)
     {
         _quantity = quantity;
+        _isProductUnit = true;
     }
 
     public int GetQuantity()
@@ -13,6 +14,6 @@ public class ProductUnit : Product
     }
     public override float CalculateAmount(float userQuantity)
     {
-        return userQuantity * price;
+        return userQuantity * _price;
     }
 }

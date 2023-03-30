@@ -31,8 +31,15 @@ public class Inventory
 
         foreach (Product product in _listProducts)
         {
-            if (product)
-            Console.WriteLine($"{product.GetName} - {product.} - {product.GetPrice}");
+            if (product.GetIsProductUnit())
+            {
+                Console.WriteLine($"{product.GetName()} - ${product.GetPrice()}");
+            }
+            else
+            {
+                ProductNoUnit productAux = (ProductNoUnit)product;
+                Console.WriteLine($"{product.GetName()} - {productAux.GetMeasure()} - {product.GetPrice()}");
+            }
         }
 
     }
