@@ -6,4 +6,5 @@ public class DebitCard : PaymentMethod
     {
         return _discount;
     }
+    
 }

@@ -13,13 +13,13 @@ public class Purchase
         _amount = amount;
     }
 
-    public void AddProduct()
+    public void AddProduct(Product product)
     {
-        
+        _listProducts.Add(product);
     }
-    public void RemoveProduct()
+    public void RemoveProduct(Product product)
     {
-
+        _listProducts.Remove(product);
     }
     public void FinishPurchase()
     {
@@ -34,7 +34,7 @@ public class Purchase
        {
             foreach (Product product in _listProducts)
             {
-
+                
             }
        }       
     }

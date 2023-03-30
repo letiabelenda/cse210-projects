@@ -7,6 +7,7 @@ class Program
         Console.WriteLine("Welcome to Mini Market!");
         Console.WriteLine("Remember to always write the name of the products with capital letter at the beginning of every word");
         int option;
+        Inventory inventory = new Inventory();
 
         do
         {
@@ -21,12 +22,12 @@ class Program
 
             if (option == 1)
             {
-
+                inventory.ListProducts();
             }
 
             else if (option == 2)
             {
-
+                
             }
 
             else if (option == 3)
