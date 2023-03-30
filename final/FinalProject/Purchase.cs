@@ -12,24 +12,22 @@ public class Purchase
         _paymentMethod = paymentMethod;
         _amount = amount;
     }
-
-    public void AddProduct(Product product)
-    {
-        _listProducts.Add(product);
-    }
-    public void RemoveProduct(Product product)
-    {
-        _listProducts.Remove(product);
-    }
     public void FinishPurchase()
     {
+        Console.Write("How do you like to pay: Cash(C) or Debit Card(D)?");
+        string answer = Console.ReadLine();
 
+        if(answer == "C")
+        {
+            Console.WriteLine($"The final amount is");
+        }
+        else
+        {
+            Console.WriteLine($"The final amount is");
+        }
     }
-    public void SaveFile()
+    public void SaveFile(string fileName)
     {
-       Console.Write("What is the filename for the goal file? ");
-       string fileName = Console.ReadLine();
-
        using (StreamWriter outputFile = new StreamWriter(fileName))
        {
             foreach (Product product in _listProducts)
@@ -38,7 +36,7 @@ public class Purchase
             }
        }       
     }
-    public void LoadFile()
+    public void LoadFile(string fileName)
     {
         
     }

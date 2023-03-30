@@ -14,7 +14,7 @@ class Program
         {
             Console.WriteLine("Menu options:");
             Console.WriteLine("1. List products available");
-            Console.WriteLine("2. Sart a purchase");
+            Console.WriteLine("2. Start a purchase");
             Console.WriteLine("3. Save purchase");
             Console.WriteLine("4. Load purchase");
             Console.WriteLine("5. Exit");
@@ -28,17 +28,31 @@ class Program
 
             else if (option == 2)
             {
-                Console.WriteLine();
+                Console.Write("What product do you want to buy (type de number)?");
+                int name = Int32.Parse(Console.ReadLine());
+                Console.Write("How much do you want to buy?");
+                float quantity = float.Parse(Console.ReadLine());
+
+                Product product = new Product();
+                inventory.AddProduct(product);
+                
             }
 
             else if (option == 3)
             {
-
+                Console.Write("What is the name of the file? ");
+                string fileName = Console.ReadLine();
+                Purchase purchase = new Purchase();
+                purchase.SaveFile(fileName);
             }
 
             else if (option == 4)
             {
+                Console.Write("What is the filename for the goal file? ");
+                string fileName = Console.ReadLine();
 
+                Purchase purchase = new Purchase();
+                purchase.LoadFile(fileName);
             }
         } while (option != 5);
     }

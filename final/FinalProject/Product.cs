@@ -11,6 +11,11 @@ public abstract class Product
         _price = price;
         _type = type;
     }
+    public Product(string name, float price)
+    {
+        _name = name;
+        _price = price;
+    }
 
     public string GetName()
     {

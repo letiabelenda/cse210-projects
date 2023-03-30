@@ -26,21 +26,31 @@ public class Inventory
 
     public void ListProducts()
     {       
+        int index = 1;
         Console.WriteLine("The products are:");
 
         foreach (Product product in _listProducts)
         {
             if (product.GetIsProductUnit())
             {
-                Console.WriteLine($"{product.GetName()} - ${product.GetPrice()}");
+                Console.WriteLine($"{index}. {product.GetName()} - ${product.GetPrice()}");
             }
             else
             {
                 ProductNoUnit productAux = (ProductNoUnit)product;
-                Console.WriteLine($"{productAux.GetName()} - {productAux.GetQuantity()}{productAux.GetMeasure()} - ${productAux.GetPrice()}");
+                Console.WriteLine($"{index}. {productAux.GetName()} - {productAux.GetQuantity()}{productAux.GetMeasure()} - ${productAux.GetPrice()}");
             }
+            index = index + 1;
         }
 
+    }
+    public void AddProduct(Product product)
+    {
+        _listProducts.Add(product);
+    }
+    public void RemoveProduct(Product product)
+    {
+        _listProducts.Remove(product);
     }
     public void ChangePrice()
     {
