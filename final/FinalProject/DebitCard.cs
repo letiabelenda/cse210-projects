@@ -2,9 +2,13 @@ public class DebitCard : PaymentMethod
 {
     private float _discount;
 
-    public double GetDiscount(double amount)
+    public DebitCard()
     {
-        double _discount = amount * 0.95;
+        
+    }
+    public float GetDiscount(float amount)
+    {
+        _discount = (float)(amount * 0.95);
         return _discount;
     }
     

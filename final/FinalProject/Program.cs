@@ -32,9 +32,9 @@ class Program
 
                 do
                 {
-                    Console.Write("What product do you want to buy (type de number)?");
+                    Console.Write("What product do you want to buy (type de number)? ");
                     int numProduct = Int32.Parse(Console.ReadLine());
-                    Console.Write("How much do you want to buy?");
+                    Console.Write("How much do you want to buy? ");
                     float userQuantity = float.Parse(Console.ReadLine());
 
                     Product product = inventory.GetProduct(numProduct);
@@ -52,7 +52,7 @@ class Program
                         productNoUnit.SetUserQuantity(userQuantity);
                         purchase.AddProduct(productNoUnit);
                     }
-                    Console.Write("Do you like to add another product (Y or N)?");
+                    Console.Write("Do you like to add another product (Y or N)? ");
                     finish = Console.ReadLine();
 
                 }while(finish == "Y");
@@ -61,7 +61,7 @@ class Program
 
                 Console.WriteLine($"The total amount to pay is {totalAmount}");
                 purchase.FinishPurchase();
-                Console.Write("Do you want to save this purchase (Y or N)?");
+                Console.Write("Do you want to save this purchase (Y or N) ?");
                 string answerSave = Console.ReadLine();
 
                 if(answerSave == "Y")

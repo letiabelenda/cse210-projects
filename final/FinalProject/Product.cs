@@ -38,5 +38,5 @@ public abstract class Product
     {
         return _isProductUnit;
     }
-    public abstract float CalculateAmount(float quantity);
+    public abstract float CalculateAmount();
 }

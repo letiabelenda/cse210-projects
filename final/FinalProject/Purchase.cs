@@ -46,19 +46,15 @@ public class Purchase
         else
         {
             DebitCard debit = new DebitCard();
-            double finalAmount = debit.GetDiscount(_amount);
-            _amount = (float)finalAmount;
-            Console.WriteLine($"You receive a 5% discount. The final amount is now {debit}");
+            float finalAmount = debit.GetDiscount(_amount);
+            _amount = finalAmount;
+            Console.WriteLine($"You receive a 5% discount. The final amount is now {finalAmount}");
         }
     }
     public void AddProduct(Product product)
     {
         _listProducts.Add(product);
     }
-    //public void RemoveProduct(Product product)
-    //{
-        //_listProducts.Remove(product);
-    //}
     public void SaveFile()
     {
 
@@ -79,8 +75,13 @@ public class Purchase
     }
     public void LoadFile(string fileName)
     {
-        string[] purchase = System.IO.File.ReadAllLines(fileName);
-        Console.WriteLine(purchase);
+        string[] purchaseLines = System.IO.File.ReadAllLines(fileName);
+        
+        foreach(string purchase in purchaseLines)
+        {
+            Console.WriteLine(purchase);
+        }
+        
     }
     
 }
