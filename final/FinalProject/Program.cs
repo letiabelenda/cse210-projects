@@ -56,23 +56,27 @@ class Program
                     finish = Console.ReadLine();
 
                 }while(finish == "Y");
+                
                 float totalAmount = purchase.CalculateTotalAmount();
 
                 Console.WriteLine($"The total amount to pay is {totalAmount}");
                 purchase.FinishPurchase();
+                Console.Write("Do you want to save this purchase (Y or N)?");
+                string answerSave = Console.ReadLine();
+
+                if(answerSave == "Y")
+                {
+                    purchase.SaveFile();
+                }       
+            
+                else
+                {
+                    Console.WriteLine("Thank you and good bye!");
+                }
 
 
             }
-
             else if (option == 3)
-            {
-                Console.Write("What is the name of the file? ");
-                string fileName = Console.ReadLine();
-                Purchase purchase = new Purchase();
-                purchase.SaveFile(fileName);
-            }
-
-            else if (option == 4)
             {
                 Console.Write("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
@@ -80,6 +84,6 @@ class Program
                 Purchase purchase = new Purchase();
                 purchase.LoadFile(fileName);
             }
-        } while (option != 5);
+        } while (option != 4);
     }
 }

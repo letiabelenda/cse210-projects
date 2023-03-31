@@ -59,37 +59,28 @@ public class Purchase
     //{
         //_listProducts.Remove(product);
     //}
-    public void SaveFile(string fileName)
+    public void SaveFile()
     {
-       Console.Write("Do you want to save this purchase (Y or N)?");
-       string answerSave = Console.ReadLine();
 
-       if(answerSave == "Y")
-       {
+        Console.Write("What is the name of the file? ");
+        string fileName = Console.ReadLine();
 
-            Console.Write("What is the name of the file? ");
-            fileName = Console.ReadLine();
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            outputFile.WriteLine($"{_date}");
 
-            using (StreamWriter outputFile = new StreamWriter(fileName))
+            foreach (Product product in _listProducts)
             {
-                outputFile.WriteLine($"{_date}");
-
-                foreach (Product product in _listProducts)
-                {
-                    outputFile.WriteLine($"{product.GetName()}");
-                }
-                outputFile.WriteLine($"Total amount:");
-            }       
-       }
-       else
-       {
-            Console.WriteLine("Thank you and good bye!");
-       }
+                outputFile.WriteLine($"{product.GetName()}");
+            }
+            outputFile.WriteLine($"Total amount: {_amount}");
+        }       
        
     }
     public void LoadFile(string fileName)
     {
-        
+        string[] purchase = System.IO.File.ReadAllLines(fileName);
+        Console.WriteLine(purchase);
     }
     
 }
