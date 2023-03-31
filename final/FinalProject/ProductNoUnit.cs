@@ -18,8 +18,8 @@ public class ProductNoUnit : Product
     {
         return _measure;
     }
-    public override float CalculateAmount(float userQuantity)
+    public override float CalculateAmount()
     {
-        return (userQuantity * _price) / _quantity;
+        return (_userQuantity * _price) / _quantity;
     }
 }

@@ -28,7 +28,8 @@ class Program
             else if (option == 2)
             {
                 Purchase purchase = new Purchase();
-                
+                string finish;
+
                 do
                 {
                     Console.Write("What product do you want to buy (type de number)?");
@@ -51,8 +52,15 @@ class Program
                         productNoUnit.SetUserQuantity(userQuantity);
                         purchase.AddProduct(productNoUnit);
                     }
-                
-                }while(true);
+                    Console.Write("Do you like to add another product (Y or N)?");
+                    finish = Console.ReadLine();
+
+                }while(finish == "Y");
+                float totalAmount = purchase.CalculateTotalAmount();
+
+                Console.WriteLine($"The total amount to pay is {totalAmount}");
+                purchase.FinishPurchase();
+
 
             }
 

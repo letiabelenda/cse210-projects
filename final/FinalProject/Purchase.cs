@@ -6,17 +6,32 @@ public class Purchase
     private float _amount;
     public Purchase()
     {
-
-    }
-    public void SetDate()
-    {
+        _amount = 0;
         DateTime timeOnly = new DateTime(DateTime.Now.TimeOfDay.Ticks);
         string dateText = timeOnly.ToString();
         
         _date = dateText;
     }
-    public void SetAmount()
+
+    public float CalculateTotalAmount()
     {
+        float amount;
+
+        foreach(Product product in _listProducts)
+        {
+            if(product.GetIsProductUnit())
+            {
+                ProductUnit productAux = (ProductUnit)product;
+                amount = productAux.CalculateAmount();
+            }
+            else
+            {
+                ProductNoUnit productAux = (ProductNoUnit)product;
+                amount = productAux.CalculateAmount();
+            }
+            _amount = _amount + amount;
+        }
+        return _amount;
         
     }
     public void FinishPurchase()
@@ -26,30 +41,51 @@ public class Purchase
 
         if(answer == "C")
         {
-            Console.WriteLine($"The final amount is");
+            Console.WriteLine("You don't receive any discount. Your final amount is the one already given.");
         }
         else
         {
-            Console.WriteLine($"The final amount is");
+            DebitCard debit = new DebitCard();
+            double finalAmount = debit.GetDiscount(_amount);
+            _amount = (float)finalAmount;
+            Console.WriteLine($"You receive a 5% discount. The final amount is now {debit}");
         }
     }
     public void AddProduct(Product product)
     {
         _listProducts.Add(product);
     }
-    public void RemoveProduct(Product product)
-    {
-        _listProducts.Remove(product);
-    }
+    //public void RemoveProduct(Product product)
+    //{
+        //_listProducts.Remove(product);
+    //}
     public void SaveFile(string fileName)
     {
-       using (StreamWriter outputFile = new StreamWriter(fileName))
+       Console.Write("Do you want to save this purchase (Y or N)?");
+       string answerSave = Console.ReadLine();
+
+       if(answerSave == "Y")
        {
-            foreach (Product product in _listProducts)
+
+            Console.Write("What is the name of the file? ");
+            fileName = Console.ReadLine();
+
+            using (StreamWriter outputFile = new StreamWriter(fileName))
             {
-                
-            }
-       }       
+                outputFile.WriteLine($"{_date}");
+
+                foreach (Product product in _listProducts)
+                {
+                    outputFile.WriteLine($"{product.GetName()}");
+                }
+                outputFile.WriteLine($"Total amount:");
+            }       
+       }
+       else
+       {
+            Console.WriteLine("Thank you and good bye!");
+       }
+       
     }
     public void LoadFile(string fileName)
     {
