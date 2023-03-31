@@ -7,8 +7,8 @@ public class Purchase
     public Purchase()
     {
         _amount = 0;
-        DateTime timeOnly = new DateTime(DateTime.Now.TimeOfDay.Ticks);
-        string dateText = timeOnly.ToString();
+        DateTime todaysDate = DateTime.Today;
+        string dateText = todaysDate.ToString();
         
         _date = dateText;
     }
@@ -36,7 +36,7 @@ public class Purchase
     }
     public void FinishPurchase()
     {
-        Console.Write("How do you like to pay: Cash(C) or Debit Card(D)?");
+        Console.Write("How do you like to pay: Cash(C) or Debit Card(D)? ");
         string answer = Console.ReadLine();
 
         if(answer == "C")
@@ -48,7 +48,7 @@ public class Purchase
             DebitCard debit = new DebitCard();
             float finalAmount = debit.GetDiscount(_amount);
             _amount = finalAmount;
-            Console.WriteLine($"You receive a 5% discount. The final amount is now {finalAmount}");
+            Console.WriteLine($"You receive a 5% discount. The final amount is now ${finalAmount}");
         }
     }
     public void AddProduct(Product product)
@@ -69,7 +69,7 @@ public class Purchase
             {
                 outputFile.WriteLine($"{product.GetName()}");
             }
-            outputFile.WriteLine($"Total amount: {_amount}");
+            outputFile.WriteLine($"Total amount: ${_amount}");
         }       
        
     }

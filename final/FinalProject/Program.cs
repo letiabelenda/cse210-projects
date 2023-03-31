@@ -59,9 +59,9 @@ class Program
                 
                 float totalAmount = purchase.CalculateTotalAmount();
 
-                Console.WriteLine($"The total amount to pay is {totalAmount}");
+                Console.WriteLine($"The total amount to pay is ${totalAmount}");
                 purchase.FinishPurchase();
-                Console.Write("Do you want to save this purchase (Y or N) ?");
+                Console.Write("Do you want to save this purchase (Y or N)? ");
                 string answerSave = Console.ReadLine();
 
                 if(answerSave == "Y")
