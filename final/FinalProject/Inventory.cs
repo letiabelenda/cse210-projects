@@ -2,6 +2,10 @@ public class Inventory
 {
     private List<Product> _listProducts = new List<Product>();
 
+    public Product GetProduct(int numProduct)
+    {
+        return _listProducts[numProduct - 1];
+    }
     public void LoadProducts()
     {
         string[] products = System.IO.File.ReadAllLines("products.txt");
@@ -18,8 +22,8 @@ public class Inventory
             }
             else
             {
-                ProductNoUnit ProductNoUnit = new ProductNoUnit(parts[0], float.Parse(parts[1]), float.Parse(parts[2]), parts[3], productType);
-                _listProducts.Add(ProductNoUnit);
+                ProductNoUnit productNoUnit = new ProductNoUnit(parts[0], float.Parse(parts[1]), float.Parse(parts[2]), parts[3], productType);
+                _listProducts.Add(productNoUnit);
             }
         }
     }
@@ -43,14 +47,6 @@ public class Inventory
             index = index + 1;
         }
 
-    }
-    public void AddProduct(Product product)
-    {
-        _listProducts.Add(product);
-    }
-    public void RemoveProduct(Product product)
-    {
-        _listProducts.Remove(product);
     }
     public void ChangePrice()
     {

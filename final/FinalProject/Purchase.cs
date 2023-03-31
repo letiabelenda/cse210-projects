@@ -4,13 +4,20 @@ public class Purchase
     private PaymentMethod _paymentMethod;
     private string _date;
     private float _amount;
-
-    public Purchase(string date, List<Product> listProducts, PaymentMethod paymentMethod, float amount)
+    public Purchase()
     {
-        _date = date;
-        _listProducts = listProducts;
-        _paymentMethod = paymentMethod;
-        _amount = amount;
+
+    }
+    public void SetDate()
+    {
+        DateTime timeOnly = new DateTime(DateTime.Now.TimeOfDay.Ticks);
+        string dateText = timeOnly.ToString();
+        
+        _date = dateText;
+    }
+    public void SetAmount()
+    {
+        
     }
     public void FinishPurchase()
     {
@@ -25,6 +32,14 @@ public class Purchase
         {
             Console.WriteLine($"The final amount is");
         }
+    }
+    public void AddProduct(Product product)
+    {
+        _listProducts.Add(product);
+    }
+    public void RemoveProduct(Product product)
+    {
+        _listProducts.Remove(product);
     }
     public void SaveFile(string fileName)
     {

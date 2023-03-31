@@ -4,6 +4,7 @@ public abstract class Product
     protected float _price;
     protected ProductType _type;
     protected Boolean _isProductUnit;
+    protected float _userQuantity;
 
     public Product(string name, float price, ProductType type)
     {
@@ -17,6 +18,10 @@ public abstract class Product
         _price = price;
     }
 
+    public void SetUserQuantity(float userQuantity)
+    {
+        _userQuantity = userQuantity;
+    }
     public string GetName()
     {
         return _name;

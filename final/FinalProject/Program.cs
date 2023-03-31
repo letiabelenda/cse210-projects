@@ -15,9 +15,8 @@ class Program
             Console.WriteLine("Menu options:");
             Console.WriteLine("1. List products available");
             Console.WriteLine("2. Start a purchase");
-            Console.WriteLine("3. Save purchase");
-            Console.WriteLine("4. Load purchase");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("3. Load purchase");
+            Console.WriteLine("4. Exit");
             Console.Write("Please choose an option: ");
             option = Int32.Parse(Console.ReadLine());
 
@@ -28,14 +27,33 @@ class Program
 
             else if (option == 2)
             {
-                Console.Write("What product do you want to buy (type de number)?");
-                int name = Int32.Parse(Console.ReadLine());
-                Console.Write("How much do you want to buy?");
-                float quantity = float.Parse(Console.ReadLine());
-
-                Product product = new Product();
-                inventory.AddProduct(product);
+                Purchase purchase = new Purchase();
                 
+                do
+                {
+                    Console.Write("What product do you want to buy (type de number)?");
+                    int numProduct = Int32.Parse(Console.ReadLine());
+                    Console.Write("How much do you want to buy?");
+                    float userQuantity = float.Parse(Console.ReadLine());
+
+                    Product product = inventory.GetProduct(numProduct);
+                    if(product.GetIsProductUnit())
+                    {
+                        ProductUnit productAux = (ProductUnit)product;
+                        ProductUnit productUnit = new ProductUnit(product.GetName(), product.GetPrice(), productAux.GetQuantity(), product.GetProductType());
+                        productUnit.SetUserQuantity(userQuantity);
+                        purchase.AddProduct(productUnit);
+                    }
+                    else
+                    {
+                        ProductNoUnit productAux = (ProductNoUnit)product;
+                        ProductNoUnit productNoUnit = new ProductNoUnit(product.GetName(), product.GetPrice(), productAux.GetQuantity(), productAux.GetMeasure(), product.GetProductType());
+                        productNoUnit.SetUserQuantity(userQuantity);
+                        purchase.AddProduct(productNoUnit);
+                    }
+                
+                }while(true);
+
             }
 
             else if (option == 3)
